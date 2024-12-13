@@ -22,6 +22,14 @@ $warning: #FFAB00;
 $info: #1976D2;
 $danger: #CE291F;
 
+$colors: (
+  primary: $primary,
+  secondary: $secondary,
+  success: $success,
+  warning: $warning,
+  info: $info,
+  danger: $danger
+);
 
 $link-color: #3C4FE0;
 $text-muted: $gray-500;
@@ -152,4 +160,14 @@ $font-xs: 12px;
     --admonition: var(--gray-400);
 
     --logo-url: "../img/logo-scylla-horizontal-light.svg";
+  }
+
+  @each $name, $color in $colors {
+    .text-#{$name} {
+      color: var(--#{$name});
+    }
+  
+    .bg-#{$name} {
+      background-color: var(--#{$name});
+    }
   }

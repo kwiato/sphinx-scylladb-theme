@@ -98,3 +98,16 @@
     }
   }
 }
+
+
+.alert {
+  padding: $spacer-sm $spacer;
+  background-color: var(--primary);
+  border-radius: $border-radius;
+
+  @each $name, $color in $colors {
+    &.alert-#{$name} {
+      background-color: var(--#{$name});
+    }
+  }
+}
